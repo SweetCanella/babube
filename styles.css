@@ -31,3 +31,32 @@ body{
 /* Вертикальные отступы секций по токенам */
 .section{ padding-block:var(--space-5); }
 .section__title{ margin:0 0 var(--space-3); }
+:where(a,button,input,select,textarea):focus-visible{
+ outline:2px solid var(--color-primary);
+ outline-offset:2px;
+}
+/* Недоступные элементы визуально «приглушаем» */
+:disabled,[aria-disabled="true"]{opacity:.6;cursor:not-allowed;}
+html{ scroll-behavior:smooth; } /* Плавная прокрутка к #якорю */
+:target{ outline:2px dashed var(--color-primary); outline-offset:4px; } /* Подсветка цели */
+
+.site-nav__link:hover{
+    font-size: 125%;
+    color:#a9ebff;
+}
+main{
+    flex-grow: 1;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+footer{
+    padding-bottom: 1rem;
+}
+.site-nav__list{
+    list-style: none;
+    padding-left: 10px;
+}
